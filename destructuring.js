@@ -20,8 +20,8 @@ var carDetails = {
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
-
-//Code Here
+let {color, make, model, year} = carDetails; 
+let newCarDetails = {color, make, model, year};
 
 
 
@@ -34,7 +34,7 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  let {firstName, lastName, title} = obj;
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -52,10 +52,23 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables.
   Sum up the values and return the total number.
 */
+// function totalPopulation(obj) { 
+//   let resultPop = 0;
+//   console.log(obj);
+//   let {utah, california, texas, arizona} = obj;
+//   let newPopulation = {utah, california, texas, arizona};
+//   for (let key in newPopulation) {
+//     resultPop += newPopulation[key];
+// }
+// return resultPop;
+// }
 
-//Code Here
 
-
+function totalPopulation(obj) { 
+  let {utah, california, texas, arizona} = obj
+  console.log(obj);
+  return utah + california + texas + arizona;
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -66,8 +79,13 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
+function ingredients(obj) {
+  let foodArray = [];
+  let {carb, fat, protein} = obj;
+  foodArray.push(carb, fat, protein);
+  return foodArray;
+  }
 
-//Code Here
 
 
 
@@ -85,9 +103,26 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
-
-
+function largeNumbers ( {first, second, third} ) {
+  
+  let smallArray = [first, second, third];
+  
+  let smallest = first;
+  for (let i = 0; i < smallArray.length; i++) {
+    if (smallArray[i] < smallest) {
+      smallest = smallArray[i];
+    }
+  }
+  return smallest;
+}  
+  // let num1 = first;
+  // let num2 = second;
+  // let num3 = third;
+    // if (num1 > num2) {
+  //   smallest = num2;
+  // } else if (num1 > num3) {
+  //   smallest = num3;
+  // }
 
 ////////// PROBLEM 6 //////////
 
@@ -96,7 +131,16 @@ function greeting( obj ) {
   The object properties will be named a, b, and c and their values will be arrays of numbers.
   Find the longest array and return that array.
 */
+function numberGroups({a, b, c}) {
+  let arrayCheck = [a, b, c];
+  let longest = a;
+    for (let i = 0; i < arrayCheck.length; i++) {
+      if (arrayCheck[i].length > longest.length) {
+        longest = arrayCheck[i];
+      }
+    }
+    return longest;
+}
 
-//Code Here
 
 
