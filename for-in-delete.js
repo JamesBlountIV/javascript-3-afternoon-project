@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let concObj = '';
+  for (let key in obj) {
+    concObj += obj[key];
+  }
+  return concObj;
 }
 
 
@@ -53,8 +57,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
-
+function greaterThan10(obj) {
+  for (let key in obj) {
+    if (obj[key] > 10) {
+      obj[key] = 0;
+    }
+  }
+  return obj;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -65,7 +75,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double(obj) {
+  for (let key in obj) {
+    obj[key] = obj[key] * 2;
+  }
+  return obj;
+}
 
 
 
@@ -79,7 +94,17 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+function secrets(obj) {
+  let string = '';
+  for (let key in obj) {
+    // console.log(key)
+    if (key.startsWith('sh')) {
+      // console.log(obj[key])
+      string += obj[key];
+    }
+  }
+  return string;
+}
 
 
 
@@ -110,7 +135,13 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+function removePassword(obj) {
+  for (let key in removePassword) {
+    if (key === passord) {
+      delete key;
+    }
+  }
+}
 
 
 
