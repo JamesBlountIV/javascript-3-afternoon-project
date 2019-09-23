@@ -113,9 +113,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
-
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 ////////// PROBLEM 4 //////////
@@ -172,7 +171,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
-
-//Code Here
+let mod = [];
+function looper() {
+  for (let i = 0; i < numsArr.length; i++) {
+    const mod = numsArr[i];
+    for (let i = 0; i < mod.length; i++) {
+      if (mod[i] % 2 === 0) {
+        mod[i] = 'even'; 
+      } else {
+        mod[i] = 'odd';
+      }
+    }
+    
+  }
+  return mod;
+}
 
 

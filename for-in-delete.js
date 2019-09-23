@@ -136,11 +136,12 @@ function secrets(obj) {
 */
 
 function removePassword(obj) {
-  for (let key in removePassword) {
-    if (key === passord) {
-      delete key;
+  for (let key in obj) {
+    if (key.startsWith("password")) {
+      delete obj[key];
     }
   }
+  return obj;
 }
 
 
@@ -160,7 +161,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
+for (let key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key];
+  }
+}
 
 
 
@@ -173,7 +178,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+function startsWithK(obj) {
+  for (let key in obj) {
+    if (key.startsWith("k")) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 
 
@@ -188,6 +200,13 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+function hiddenTreasure(obj) {
+  for (let key in obj) {
+    if (!obj[key].includes("treasure")) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 
